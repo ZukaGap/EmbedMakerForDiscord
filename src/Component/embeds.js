@@ -9,7 +9,7 @@ class Embeds extends React.Component{
                     <input type="text" placeholder="title" id="title" />
                     <input type="text" placeholder="description" id="description" />
                     <input type="text" placeholder="url" id="url" />
-                    <input type="text" placeholder="Color Dec" id="favcolor" />   
+                    <input type="color" placeholder="Color Dec" id="favcolor" />   
                     <input type="text" placeholder="time stamp" id="timestamp" />
                     <input type="text" placeholder="thumbnail" id="thumbnail" /> 
                     <input type="text" placeholder="image" id="image" /> 

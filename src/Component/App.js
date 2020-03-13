@@ -16,8 +16,7 @@ class App extends React.Component{
         Template.content = document.getElementById("MContent").value;
         Template.embed.title = document.getElementById("title").value;
         Template.embed.description = document.getElementById("description").value;
-        Template.embed.url = document.getElementById("url").value;        
-        Template.embed.color = document.getElementById("favcolor").value;        
+        Template.embed.url = document.getElementById("url").value;      
         Template.embed.timestamp = document.getElementById("timestamp").value;         
         Template.embed.footer.icon_url = document.getElementById("IconURL").value; 
         Template.embed.footer.text = document.getElementById("Text").value; 
@@ -28,9 +27,15 @@ class App extends React.Component{
         Template.embed.author.icon_url = document.getElementById("autorIconURL").value;
         Template.embed.fields.name = document.getElementById("FieldName").value;
         Template.embed.fields.value = document.getElementById("FieldText").value;
-        Template.embed.fields.inline = document.getElementById("InlineCheck").value;
+        Template.embed.fields.inline = document.getElementById("InlineCheck").value;       
         
+        // ფერი
+        var ColorHex = document.getElementById("favcolor").value;
+        ColorHex = ColorHex.substring(1);
+        var ColorDec = parseInt(ColorHex,16);        
+        Template.embed.color =ColorDec;        
 
+        // კონსოლში ბეჭდავს სტრუქტურას
         console.log(Template);   
         
         fetch(ChatLink ,
