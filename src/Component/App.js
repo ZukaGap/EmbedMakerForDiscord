@@ -27,7 +27,9 @@ class App extends React.Component{
         Template.embeds[0].author.icon_url = document.getElementById("autorIconURL").value;
         Template.embeds[0].fields[0].name = document.getElementById("FieldName").value;
         Template.embeds[0].fields[0].value = document.getElementById("FieldText").value;
-        // Template.embeds[0].fields[0].inline = document.getElementById("InlineCheck").value;       
+        // Template.embeds[0].fields[0].inline = document.getElementById("InlineCheck").value;    
+        
+        // ChatLink = document.getElementById("Link").value;
         
         // ფერი
         var ColorHex = document.getElementById("favcolor").value;
@@ -37,7 +39,7 @@ class App extends React.Component{
 
         // კონსოლში ბეჭდავს სტრუქტურას
         console.log(Template);   
-        
+
         fetch(ChatLink ,
             {
                 method: 'POST',
@@ -50,7 +52,7 @@ class App extends React.Component{
     render() {
         return (
             <div>            
-                {/* <input type="text" placeholder="WebHook Link" id="Link" />                  */}
+                {/* <input type="text" placeholder="WebHook Link" id="Link" /> */}
                 <h2>Main Content</h2>               
                 <div className="content" >
                     <input type="text" placeholder="Content" id="MContent" />
