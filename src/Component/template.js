@@ -1,33 +1,36 @@
 const Template = {
     content: "",
-    embed: {
+    embeds: [
+      {
         title: "",
         description: "",
         url: "",
         color: 0,
-        timestamp: "",
+        timestam: "",
         footer: {
-            icon_url: "",
-            text: ""
+          icon_url: "",
+          text: ""
         },
         thumbnail: {
-            url: ""
+          url: ""
         },
         image: {
-            url: ""
+          url: ""
         },
         author: {
-            name: "",
-            url: "",
-            icon_url: ""
+          name: "",
+          url: "",
+          icon_url: ""
         },
-        fields: {
+        fields:[ 
+          {
             name: "",
             value: "",
-            inline: false
-        }
-        
-    }
-}
+            inline: true
+          }
+          ]
+      }
+    ]
+  };
 
 export default Template;
