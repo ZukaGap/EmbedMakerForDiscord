@@ -6,17 +6,17 @@ class Embeds extends React.Component{
             <div> 
                 <h2>Embeds</h2>
                 <div className="embeds" >
-                    <input type="text" placeholder="title" id="title" />
-                    <input type="text" placeholder="description" id="description" />
-                    <input type="text" placeholder="url" id="url" />
+                    <input type="text" placeholder="Title" id="title" />
+                    <input type="text" placeholder="Description" id="description" />
+                    <input type="url" placeholder="URL" id="url" />
                     <input type="color" placeholder="Color Dec" id="favcolor" />   
-                    <input type="text" placeholder="time stamp" id="timestamp" />
-                    <input type="text" placeholder="thumbnail" id="thumbnail" /> 
-                    <input type="text" placeholder="image" id="image" /> 
+                    <input type="text" placeholder="Time stamp" id="timestamp" />
+                    <input type="url" placeholder="Thumbnail URL" id="thumbnail" /> 
+                    <input type="url" placeholder="Image URL" id="image" /> 
                 </div>
                 <h2>Footer</h2>
                 <div className="Footer" >    
-                    <input type="text" placeholder="Icon URL" id="IconURL" /> 
+                    <input type="url" placeholder="Icon URL" id="IconURL" /> 
                     <input type="text" placeholder="Text" id="Text" />               
                 </div>
             </div>

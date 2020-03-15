@@ -7,8 +7,8 @@ class Autor extends React.Component{
                 <h2>Autor</h2>
                 <div className="Autor" >
                     <input type="text" placeholder="Name" id="autorName" />
-                    <input type="text" placeholder="URL" id="autorURL" />
-                    <input type="text" placeholder="Icon URL" id="autorIconURL" />                                  
+                    <input type="url" placeholder="URL" id="autorURL" />
+                    <input type="url" placeholder="Icon URL" id="autorIconURL" />                                  
                 </div>            
             </div>
         )

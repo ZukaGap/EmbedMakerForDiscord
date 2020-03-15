@@ -44,19 +44,20 @@ h2{
 }
 
 input {
-    background-color: #669BBC;
+    background-color: #669bbc;
     color: #000;
+    text-align: center;
 }
 
 #Submit {
-    color: red;
-    background-color: seagreen;
+    color: #ff0000;
+    background-color: #2e8b57;
     text-align: center;
 }
 
 #Submit:active {
-    background-color: red;
-    color: seagreen;
+    background-color: #ff0000;
+    color: #2e8b57;
 }
 
 #Link {
@@ -70,3 +71,13 @@ input {
         grid-template-columns: auto;
     }
 }
+
+input::placeholder {
+    color: #d84843c9;
+    text-align: center;
+  }
+
+  input:invalid {
+    background-color: #ffc0cb;
+    border: 2px solid #f50c0c;
+  }

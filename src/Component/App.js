@@ -60,7 +60,7 @@ class App extends React.Component{
                 <Embeds />
                 <Autor />
                 <Fields />
-                <input type="button" value="Submit" id="Submit" onClick={this.handleChange} />
+                <input type="submit" value="Submit" id="Submit" onClick={this.handleChange} />
             </div>
         )
     }
