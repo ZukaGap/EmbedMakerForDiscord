@@ -1,83 +1,131 @@
-*{
-    padding: 0;
-    margin: 0;
-    outline: none;
-    font-size: 25px;
-    border: none;
-    border-radius: 5px;
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  font-size: 25px;
+  border: none;
+  border-radius: 5px;
+}
+
+#root {
+  width: 100%;
 }
 
 body {
-    background-color: #29335C;    
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
+  background-color: #23272a;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
-h2{
-    color: #F15025;
-    margin: 0.5rem 0 0 0;
+h2 {
+  color: #f15025;
+  margin: 0.5rem 0 0 0;
 }
-.content, .embeds, .Autor, .InnerField, .Footer {
-    margin: 0;
-    display: grid;
-    place-items: center;
-    grid-template-columns: auto;
-    grid-row-gap: 0.5rem;
-}
-
-.content input, .embeds input, .Footer input , .Autor input, .InnerField input {
-    outline: none;
-    height: 1.5rem;
+.content,
+.embeds,
+.Author,
+.InnerField,
+.Footer {
+  margin: 0;
+  display: grid;
+  grid-row-gap: 0.5rem;
 }
 
-.embeds, .Autor, .Footer {
-    grid-column-gap: 0.5rem;
-    grid-template-columns: auto auto;
-} 
+.content {
+  width: 100%;
+  resize: vertical;
+}
+
+.content,
+.embeds input,
+.Footer input,
+.Author input,
+.InnerField input {
+  outline: none;
+  height: 1.5rem;
+}
+
+.embeds,
+.Author,
+.Footer {
+  grid-column-gap: 0.5rem;
+  grid-template-columns: auto auto;
+}
 
 .InnerField {
-    grid-column-gap: 0.5rem;
-    grid-template-columns: 20px auto auto;
-    margin: 1rem 0;
+  grid-column-gap: 0.5rem;
+  grid-template-columns: 20px auto auto;
+  margin: 1rem 0;
 }
 
-input {
-    background-color: #669bbc;
-    color: #000;
-    text-align: center;
+input,
+.content {
+  background-color: #2c2f33;
+  color: #ffffff;
+  text-align: center;
 }
 
 #Submit {
-    color: #ff0000;
-    background-color: #2e8b57;
-    text-align: center;
+  color: #ffffff;
+  background-color: #7289da;
+  text-align: center;
+  padding: 10px 20px;
 }
 
 #Submit:active {
-    background-color: #ff0000;
-    color: #2e8b57;
+  background-color: #7289dace;
+  color: #ffffffc5;
 }
 
 #Link {
-    margin: 1rem 0 0 0;
-    height: 1.5rem;
-    width: 100%;
+  margin: 1rem 0 0 0;
+  height: 1.5rem;
+  width: 100%;
 }
 
-@media screen and (max-width: 600px) {
-    .embeds, .Autor, .Footer, .InnerField{
-        grid-template-columns: auto;
-    }
+.main {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 20px 50px;
 }
 
 input::placeholder {
-    color: #d84843c9;
-    text-align: center;
+  color: #d84843c9;
+  text-align: center;
+}
+
+input:invalid {
+  background-color: #ffc0cb;
+  box-sizing: border-box;
+}
+
+.GeneratedJSON {
+  display: grid;
+  padding: 25px;
+  grid-row-gap: 0.5rem;
+  grid-template-rows: 85%;
+}
+
+@media screen and (max-width: 600px) {
+  .embeds,
+  .Author,
+  .Footer,
+  .InnerField {
+    grid-template-columns: auto;
+  }
+  #root {
+    width: auto;
   }
 
-  input:invalid {
-    background-color: #ffc0cb;
-    border: 2px solid #f50c0c;
+  .main {
+    display: grid;
+    grid-template-columns: auto;
+    padding: 0;
+    margin: 0;
   }
+  .content {
+    height: auto;
+  }
+}
