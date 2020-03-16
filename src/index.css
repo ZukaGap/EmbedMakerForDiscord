@@ -108,6 +108,13 @@ input:invalid {
   grid-template-rows: 85%;
 }
 
+.GeneratedText {
+  width: 100%;
+  resize: vertical;
+  background-color: #282b30;
+  color: #98c379;
+}
+
 @media screen and (max-width: 600px) {
   .embeds,
   .Author,
