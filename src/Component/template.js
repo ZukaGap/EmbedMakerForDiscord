@@ -6,7 +6,7 @@ const Template = {
       description: "",
       url: "",
       color: null,
-      timestam: "",
+      timestamp: "",
       footer: {
         icon_url: "",
         text: ""

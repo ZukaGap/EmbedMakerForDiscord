@@ -10,11 +10,10 @@ class App extends React.Component {
   constructor() {
     super();
     this.handleChange = this.handleChange.bind(this);
+    this.handleSend = this.handleSend.bind(this);
   }
 
   handleChange() {
-    // მისამართი სადაც იგზავნება
-    const SelfChatLink = document.getElementById("Link").value;
     // ინფუთებიდან დათრევა და სტრუქტურაში ჩაწერა
     Template.content = document.getElementById("MContent").value;
     Template.embeds[0].title = document.getElementById("title").value;
@@ -42,26 +41,35 @@ class App extends React.Component {
     Template.embeds[0].fields[0].value = document.getElementById(
       "FieldText"
     ).value;
-    // Template.embeds[0].fields[0].inline = document.getElementById("InlineCheck").value;
-    console.log("esaa", document.getElementById("InlineCheck").value);
+    Template.embeds[0].fields[0].inline = document.getElementById(
+      "InlineCheck"
+    ).checked;
 
-    // ფერი
+    // ფერი/color
     var ColorHex = document.getElementById("favcolor").value;
     ColorHex = ColorHex.substring(1);
     var ColorDec = parseInt(ColorHex, 16);
     Template.embeds[0].color = ColorDec;
+    document.getElementById("GeneratedTextID").value = JSON.stringify(Template);
+  }
 
-    fetch(SelfChatLink, {
-      method: "POST",
-      body: JSON.stringify(Template),
-      headers: { "Content-Type": "application/json" }
-    })
-      .then(() => {
-        console.log(`gamembeds sent. you can generate JSON at $testsite`);
+  handleSend() {
+    // მისამართი სადაც იგზავნება
+    const SelfChatLink = document.getElementById("Link").value;
+
+    if (SelfChatLink) {
+      fetch(SelfChatLink, {
+        method: "POST",
+        body: JSON.stringify(Template),
+        headers: { "Content-Type": "application/json" }
       })
-      .catch(() => {
-        console.log("err responce");
-      });
+        .then(() => {
+          alert(`Gamembeds Sent.`);
+        })
+        .catch(() => {
+          alert("Err Responce");
+        });
+    } else alert("Can't Send\nBecause You Need WebHook link");
   }
 
   render() {
@@ -80,13 +88,21 @@ class App extends React.Component {
           <Fields />
         </div>
         <div className="GeneratedJSON">
-          <textArea className="GeneratedText" />
-          <input
-            type="submit"
-            value="Send"
-            id="Submit"
-            onClick={this.handleChange}
-          />
+          <div className="Submit">
+            <input
+              type="submit"
+              value="Generate"
+              id="SubmitGenerate"
+              onClick={this.handleChange}
+            />
+            <input
+              type="submit"
+              value="Send"
+              id="SubmitSend"
+              onClick={this.handleSend}
+            />
+          </div>
+          <textArea className="GeneratedText" id="GeneratedTextID" />
         </div>
       </div>
     );
