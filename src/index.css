@@ -65,7 +65,7 @@ h2 {
   grid-column-start: 1;
   grid-column-end: 3;
   resize: vertical;
-  height: auto;
+  height: 1.5rem;
   background-color: #2c2f33;
   color: #ffffff;
   text-align: center;
