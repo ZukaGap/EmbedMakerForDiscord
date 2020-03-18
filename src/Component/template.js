@@ -22,13 +22,7 @@ const Template = {
         url: "",
         icon_url: ""
       },
-      fields: [
-        {
-          name: "",
-          value: "",
-          inline: null
-        }
-      ]
+      fields: null
     }
   ]
 };

@@ -21,7 +21,13 @@ class App extends React.Component {
       "description"
     ).value;
     Template.embeds[0].url = document.getElementById("url").value;
-    Template.embeds[0].timestamp = document.getElementById("timestamp").value;
+    //Date TimeStamp pars
+    // Template.embeds[0].timestamp = document.getElementById("timestamp").value;
+    Template.embeds[0].timestamp = new Date(
+      document.getElementById("timestamp").value
+    );
+
+    //
     Template.embeds[0].footer.icon_url = document.getElementById(
       "IconURL"
     ).value;
@@ -35,15 +41,16 @@ class App extends React.Component {
     Template.embeds[0].author.icon_url = document.getElementById(
       "autorIconURL"
     ).value;
-    Template.embeds[0].fields[0].name = document.getElementById(
-      "FieldName"
-    ).value;
-    Template.embeds[0].fields[0].value = document.getElementById(
-      "FieldText"
-    ).value;
-    Template.embeds[0].fields[0].inline = document.getElementById(
-      "InlineCheck"
-    ).checked;
+
+    var name = document.getElementById("FieldName").value;
+    var value = document.getElementById("FieldText").value;
+    var inline = document.getElementById("InlineCheck").checked;
+
+    if (name.length != 0 && value.length != 0) {
+      Template.embeds[0].fields = [{ name, value, inline }];
+    } else {
+      Template.embeds[0].fields = null;
+    }
 
     // ფერი/color
     var ColorHex = document.getElementById("favcolor").value;

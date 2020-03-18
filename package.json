@@ -9,6 +9,7 @@
     "fetch": "^1.1.0",
     "node-fetch": "^2.6.0",
     "react": "^16.13.0",
+    "react-datepicker": "^2.14.0",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0"
   },
