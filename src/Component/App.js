@@ -1,4 +1,7 @@
 import React from "react";
+import ButterToast, { Cinnamon, POS_TOP, POS_RIGHT } from "butter-toast";
+import { ReactComponent as Error } from "./times-solid.svg";
+import { ReactComponent as Check } from "./check-solid.svg";
 import Embeds from "./embeds";
 import Author from "./author";
 import Fields from "./fields";
@@ -11,6 +14,40 @@ class App extends React.Component {
     super();
     this.handleChange = this.handleChange.bind(this);
     this.handleSend = this.handleSend.bind(this);
+    this.onClickMe = this.onClickMe.bind(this);
+  }
+
+  onClickMe(str, status) {
+    if (status === "Error")
+      ButterToast.raise({
+        content: (
+          <Cinnamon.Crunch
+            scheme={Cinnamon.Crisp.SCHEME_RED}
+            title={str}
+            icon={<Error />}
+          />
+        )
+      });
+    else if (status === "Error1")
+      ButterToast.raise({
+        content: (
+          <Cinnamon.Crunch
+            scheme={Cinnamon.Crisp.SCHEME_ORANGE}
+            title={str}
+            icon={<Error />}
+          />
+        )
+      });
+    else
+      ButterToast.raise({
+        content: (
+          <Cinnamon.Crunch
+            scheme={Cinnamon.Crunch.SCHEME_GREEN}
+            title={str}
+            icon={<Check />}
+          />
+        )
+      });
   }
 
   handleChange() {
@@ -71,12 +108,15 @@ class App extends React.Component {
         headers: { "Content-Type": "application/json" }
       })
         .then(() => {
-          alert(`Gamembeds Sent.`);
+          this.onClickMe("Gamembeds Sent.", "Succes");
         })
         .catch(() => {
-          alert("Err Responce");
+          this.onClickMe("Err Responce", "Error");
         });
-    } else alert("Can't Send\nBecause You Need WebHook link");
+    } else {
+      // alert("Can't Send\nBecause You Need WebHook link");
+      this.onClickMe("Can't Send\nBecause You Need WebHook link", "Error1");
+    }
   }
 
   render() {
@@ -107,6 +147,9 @@ class App extends React.Component {
               value="Send"
               id="SubmitSend"
               onClick={this.handleSend}
+            />
+            <ButterToast
+              position={{ vertical: POS_TOP, horizontal: POS_RIGHT }}
             />
           </div>
           <textArea className="GeneratedText" id="GeneratedTextID" />
